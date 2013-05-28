@@ -10,7 +10,7 @@ def montecarlo(data, curve, x, P, model, itr):
     N = len(data)
     SS = sum(data - curve)**2
     gain = np.sqrt(SS / (N - P))
-    curven = curve + 1 * np.random.randn(len(curve))
+    curven = curve + gain * np.random.randn(len(curve))
     tau = []
     for Iter in xrange(itr):
         SS = sum(data - curve)**2
