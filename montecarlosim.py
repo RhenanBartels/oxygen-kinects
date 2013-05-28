@@ -16,7 +16,9 @@ def montecarlo(data, curve, x, P, model, itr):
         SS = sum(data - curve)**2
         gain = np.sqrt(SS / (N - P))
         curven = curve + gain * np.random.randn(len(curve))
-        p0 = [min(curven), max(curven) - min(curven), 10]
+        p0 = [min(curven), max(curven) - min(curven),
+              x[np.where(curven <= (np.exp(-1) * max(curven)) +
+                min(curven))[0][0]]]
         fit = leastsq(model, p0, args=(x, curven))
         tau.append(fit[0][-1])
     tau.sort()
