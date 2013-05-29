@@ -65,4 +65,4 @@ def ftest(Ernull, Eralt):
     MSwg = SSwg / dfwg
     fRatio = MSbg / MSwg  # F Ratio.
     pValue = fprob(SSnull, SSalt, fRatio)
-    return [fRatio, pValue]
+    return fRatio, pValue
