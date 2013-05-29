@@ -22,8 +22,7 @@ def kwtest(Ernull, Eralt):
     ralt = sortIndex(Eralt, rM)
     sRnull = sum(rnull)
     sRalt = sum(ralt)
-    sRc = sRnull + sRalt
-    aRnull = mean(rnull)
+    Rnull = mean(rnull)
     aRalt = mean(ralt)
     aRs = (aRnull + aRalt) / 2
     SSbg = Nnull * (aRnull - aRs)**2 + Nalt * (aRalt - aRs)**2
