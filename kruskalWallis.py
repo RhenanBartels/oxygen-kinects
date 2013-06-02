@@ -6,10 +6,7 @@ from scipy.stats import chisqprob
 
 
 def sortIndex(v, v2):
-    pos = []
-    for itr in xrange(len(v)):
-        ind = where(v[itr] == v2)[0][0]
-        pos.append(ind)
+    pos = [where(ind == v2)[0][0] for ind in v]
     return pos
 
 
